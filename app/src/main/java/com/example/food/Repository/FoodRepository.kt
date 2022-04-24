@@ -9,8 +9,8 @@ class FoodRepository(val db:FoodDatabase) {
     suspend fun getCategory()=RetrofitInstance.api.getcategory()
     suspend fun getfilter(category: String)=RetrofitInstance.api.filterCategory(category)
     suspend fun getDetails(id:String)=RetrofitInstance.api.Details(id)
-    //---------------------database-------------------------------------------------
 
+    //---------------------database-------------------------------------------------/>
     suspend fun upsert(meal: Meal)=db.getFoodDao().upsert(meal)
     fun getAllFood()=db.getFoodDao().getAllfood()
     suspend fun deleteFood(meal: Meal)=db.getFoodDao().deleteFood(meal)

@@ -87,9 +87,12 @@ class FoodViewModel(val foodRepository: FoodRepository):ViewModel() {
         }
         return Resource.Error(response.message())
     }
+
+
      fun saveFood(meal: Meal)=viewModelScope.launch {
          foodRepository.upsert(meal)
      }
+
     fun getAllfood()=foodRepository.getAllFood()
 
     fun deleteFood(meal: Meal)=viewModelScope.launch {

@@ -1,6 +1,7 @@
 package com.example.food.View
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,6 +13,8 @@ import com.bumptech.glide.Glide
 import com.example.food.R
 import com.example.food.Util.Resource
 import com.example.food.ViewModel.FoodViewModel
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_details.*
 
 
@@ -29,6 +32,12 @@ val args: DetailsArgs by navArgs()
 
         save_dd.setOnClickListener {
             viewModel.saveFood(Food)
+            Snackbar.make(view, "Saved successfully", Snackbar.LENGTH_LONG).apply {
+                animationMode = BaseTransientBottomBar.ANIMATION_MODE_SLIDE
+                setBackgroundTint(Color.parseColor("#1AD836"))
+                setTextColor(Color.parseColor("#FFFFFF"))
+                show()
+            }
         }
 
 

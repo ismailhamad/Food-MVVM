@@ -19,6 +19,7 @@ import com.example.food.Model.Category
 import com.example.food.R
 import com.example.food.Util.Resource
 import com.example.food.ViewModel.FoodViewModel
+import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.item_food.*
@@ -83,6 +84,12 @@ lateinit var Category: Category
 
         foodAdapter.setOnItemClickListener2 {
             viewModel.saveFood(it)
+            Snackbar.make(view, "Saved successfully", Snackbar.LENGTH_LONG).apply {
+                animationMode = BaseTransientBottomBar.ANIMATION_MODE_SLIDE
+                setBackgroundTint(Color.parseColor("#1AD836"))
+                setTextColor(Color.parseColor("#FFFFFF"))
+                show()
+            }
         }
 
 

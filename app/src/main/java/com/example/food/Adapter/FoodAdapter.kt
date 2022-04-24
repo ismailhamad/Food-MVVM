@@ -39,6 +39,7 @@ val food=differ.currentList[position]
             name_food.text=food.strMeal
             country.text=food.strArea
             Card_save.setOnClickListener {
+
                 onItemClickListener2?.let { it(food) }
                // Card_save.setBackgroundColor(Color.parseColor("#F1C02F"))
                 Card_save.setCardBackgroundColor(Color.YELLOW);

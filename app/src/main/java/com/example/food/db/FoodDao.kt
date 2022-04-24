@@ -5,6 +5,7 @@ import androidx.room.*
 import com.example.food.Model.Meal
 
 @Dao
+
 interface FoodDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(meal: Meal):Long

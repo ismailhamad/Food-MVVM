@@ -7,8 +7,9 @@ import androidx.room.RoomDatabase
 import com.example.food.Model.Meal
 
 @Database(
-    entities = [Meal::class],version = 3,exportSchema = false
+    entities = [Meal::class],version = 4,exportSchema = false
 )
+
 abstract class FoodDatabase:RoomDatabase() {
     abstract fun getFoodDao():FoodDao
     companion object{
